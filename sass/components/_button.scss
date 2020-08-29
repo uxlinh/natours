@@ -1,0 +1,97 @@
+
+.btn {
+    &:link,
+    &:visited {
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 1.5rem 4rem;
+        display: inline-block;
+        /* Always if we want paddings or white to an element */
+        border-radius: 10rem;
+        transition: all .2s;
+        position: relative;
+        font-size: 1.6rem;
+    }
+
+    &:hover {
+        transform: translateY(-0.3rem);
+        /* Y-direction goes from top to bottom (positive direction), if we want something to move up then it is in a negative direction */
+        box-shadow: 0 1rem 2rem rgba($color-black, .2);
+        /* x y blurryness color */
+        /* after pseudoelement only when we hover on the button */
+        &:after {
+        transform: scaleX(1.5) scaleY(1.6);
+        opacity: 0;
+        }
+    }
+
+    &:active {
+        transform: translateY(-1px);
+        box-shadow: 0 .5rem 1rem rgba($color-black, .2);
+    }
+
+    &--white {
+        background-color: $color-white;
+        color: $color-primary-dark;
+
+        &::after {
+            background-color: $color-white;
+        }
+    }
+
+    &::after {
+        /*This element is treated as the child of the button*/
+        content: "";
+        /* Content element must always be specified even though empty, otherwise it will not be displayed */
+        display: inline-block;
+        /* Display element must always be specified, here inline block because the button is also an inline block */
+        height: 100%;
+        /*100% of the button*/
+        width: 100%;
+        /*100% of the button*/
+        border-radius: 100px;
+        position: absolute;
+        /*Must be relative to the button*/
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: all .4s;
+    }
+
+
+
+    /* ANIMATION BUTTON */
+    /* Link-pseudoclass to style elements with special conditions */
+
+    /*We create a new class btn-animated that only apply to this button because there will usually be many other buttons in a site*/
+    &--animated {
+        animation: moveInBottom .5s ease-out .8s;
+        animation-fill-mode: backwards;
+        /*This will apply the styles in keyframe before the animation starts, this solves the issue that the button is already visible before the animation starts*/
+    }
+}
+
+.btn-text {
+    &:link,
+    &:visited {
+        font-size: $default-font-size;
+        color: $color-primary;
+        display: inline-block;
+        text-decoration: none;
+        border-bottom: 1px solid $color-primary;
+        padding: 3px;
+        transition: all .2s;
+    }
+
+    &:hover{
+        background-color: $color-primary;
+        color: $color-white;
+        box-shadow: 0 1rem 2rem rgba($color-black, .15);
+        transform: translateY(-2px);
+    }
+
+    &:active{
+        box-shadow: 0 .5rem 1rem rgba($color-black, .15);
+        transform: translateY(0px);
+    }
+}

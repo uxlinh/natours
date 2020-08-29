@@ -1,0 +1,10 @@
+@mixin clearfix {
+    &::after {
+        content: "";
+        display: table;
+        // Table is standard versions for clearfix.
+        clear: both; 
+        // Includes clear for float left and right. It will work no matter we use float left or right.
+    }
+}
+// What Clearfix does is to put a pseudo element in after element to clear the floats. 
