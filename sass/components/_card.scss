@@ -39,6 +39,9 @@
     &:hover &__side--back{
         transform: rotateY(0deg);
     }
+    //when we hover .card:hover, .card__side will be transformed
+
+    
 
     //Front side styling 
 
@@ -109,4 +112,3 @@
 
 
 
-//when we hover .card:hover, .card__side will be transformed
