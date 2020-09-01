@@ -60,6 +60,8 @@
         background-blend-mode: screen; //modern CSS property, does not work at explorer & microsoft edge
         -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
         clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); //modern CSS property, does not work at explorer & microsoft edge
+        border-top-left-radius: 3px; //to adjust clip path on the image
+        border-top-right-radius: 3px; //to adjust clip path on the image
 
         &--1{
             background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark), url(../img/nat-5.jpg);
