@@ -8,3 +8,11 @@
     }
 }
 // What Clearfix does is to put a pseudo element in after element to clear the floats. 
+
+
+@mixin absCenter{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
