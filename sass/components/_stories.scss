@@ -8,6 +8,16 @@
     padding-left: 9rem;
     font-size: $default-font-size;
     transform: skewX(-12deg);
+    
+    @include respond(tab-port){
+        width: 100%;
+        padding: 4rem;
+        padding-left: 7rem;
+    }
+
+    @include respond(tab-port){
+        transform: skewX(0deg);
+    }
 
     &__shape {
         position: relative;
@@ -15,15 +25,17 @@
         height: 15rem;
         float: left;
         overflow: hidden;
-        transform: translateX(-3rem) skewX(12deg);
         border-radius: 50%;
+        transform: translateX(-3rem) skewX(12deg);
 
         -webkit-shape-outside: circle(50% at 50% 50%); 
         shape-outside: circle(50% at 50% 50%); //radius will be half of the width and height of the element. 50% 50% means center horisontally and vertically. This only works with defined width and height in an element.
         -webkit-clip-path: circle(50% at 50% 50%);
         clip-path: circle(50% at 50% 50%);
 
-   
+        @include respond(tab-port){
+            transform: translateX(-3rem) skewX(0deg);
+        }
     }
 
     &__img {
@@ -35,6 +47,10 @@
 
     &__text{
         transform: skewX(12deg);
+
+        @include respond(tab-port){
+            transform:skewX(0deg);
+        }
     }
 
     &__caption {
