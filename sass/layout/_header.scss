@@ -1,55 +1,30 @@
 .header {
-    height: 95vh;
-    background-image: linear-gradient(to right bottom,
-            rgba($color-primary-light, 0.8),
-            rgba($color-primary-dark, 0.8)),
-        url('../img/hero.jpg');
-    background-size: cover;
-    background-position: top;
-    position: relative;
-    -webkit-clip-path: polygon(
-        0 0,
-        100% 0,
-        100% 75vh,
-        0 100%);
-    clip-path: polygon(
-            0 0,
-            100% 0,
-            100% 75vh,
-            0 100%);
+        display: flex;
+        height: 80vh;
+        justify-content: center;
+        align-items: center;
 
-    @include respond(phone){
-        -webkit-clip-path: polygon(
-        0 0,
-        100% 0,
-        100% 80vh,
-        0 100%);
-    clip-path: polygon(
-            0 0,
-            100% 0,
-            100% 80vh,
-            0 100%);
-
+    &__hero{
+        height: 60%;
+        width: 100%;
+        position: relative;
     }
 
-    &__logo-box {
+    &__hero::after{ //relative to the hero-img
+        content: ""; //generates another div
+        background-color: black; 
+        width: 100%;
+        height: 90%;
         position: absolute;
-        top: 4rem;
-        left: 4rem;
+        top: 0;
+        left: 0;
+        opacity: 0.3;
+    }
+    &__hero-img{
+        width: 100%;
+        height: 90%;
+
     }
 
-    &__logo {
-        height: 3.5rem;
-    }
 
-    &__text-box {
-        position: absolute;
-        left: 50%;
-        /*Parent element=header*/
-        top: 40%;
-        /*Parent element=header*/
-        transform: translate(-50%, -50%);
-        /* this 50% is related to the element-itself and not of the parent-element, 50% of the element is shifted to the left and 50% of the element to the top*/
-        text-align: center;
-    }
 }
